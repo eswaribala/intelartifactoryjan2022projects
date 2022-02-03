@@ -59,16 +59,16 @@
 <distributionManagement>
     <repository>
         <id>central</id>
-        <name>a0jno2qfvs5gj-artifactory-primary-0-releases</name>
-        <url>https://vebrepo.jfrog.io/artifactory/veb-libs-release-local</url>
+        <name>rps-virtual-machine-releases</name>
+        <url>http://172.20.0.76:8081/artifactory/veb-libs-release-local</url>
     </repository>
-     <snapshotRepository>
+    <snapshotRepository>
         <id>snapshots</id>
-        <name>a0jno2qfvs5gj-artifactory-primary-0-snapshots</name>
-        <url>https://vebrepo.jfrog.io/artifactory/veb-libs-snapshot-local</url>
+        <name>rps-virtual-machine-snapshots</name>
+        <url>http://172.20.0.76:8081/artifactory/veb-libs-snapshot-local</url>
     </snapshotRepository>
+    
 </distributionManagement>
-
 	<build>
 		<plugins>
 			<plugin>
