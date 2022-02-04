@@ -13,7 +13,7 @@ pipeline {
                
                   rtServer (
                     id: "ART",
-                    url: "https://vebrepo.jfrog.io/",
+                    url: "http://localhost:8081/artifactory",
                     credentialsId: "ARTID"
                 )
  
@@ -35,14 +35,22 @@ pipeline {
             }
         }
         
-        stage('Build Maven Project') {
+         stage('Build Maven Project') {
             steps {
                 rtMavenRun (
                     tool: 'maven',
-                    pom: './productapi/pom.xml',
+                    pom: './jfrgcloudproductapi/pom.xml',
                     goals: 'clean install -DskipTests',
-                    //deployerId: "maven-deployer",
-                    //resolverId: "maven-resolver"
+                    deployerId: "maven-deployer",
+                    resolverId: "maven-resolver"
+                )
+            }
+        }
+ 
+         stage ('Publish build info') {
+            steps {
+                rtPublishBuildInfo (
+                    serverId: "ART"
                 )
             }
         }
