@@ -3,13 +3,14 @@ steps:
   type: Bash
   configuration:
     inputResources:
-      - name: my_Git_Repository     # Trigger execution on code commit
+      - name:  "eswaribala/intelartifactoryjan2022projects"
+    # Trigger execution on code commit
   execution:
     onExecute:
       - echo "Hello World!"
  
 - name: step_2
-  type: Bash
+  type: bat
   configuration:
     inputSteps:
       - name: step_1               # Execute this step after the prior step
