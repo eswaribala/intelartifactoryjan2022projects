@@ -9,7 +9,7 @@ GitRepo:                                            # Required.
 artifactoryIntegration: productapi                        # Required. Name of the artifactory integration using which the docker image will be pushed.
  
 Image:                                              # Required.
-  name: eswaribala/vusmsjan2022:traderappv1                                    # Name of the Image resource. Defaults to ImageRes.
+  name: ImageRes                                    # Name of the Image resource. Defaults to ImageRes.
   sourceRepository:  veb2022.jfrog.io/inv-1-veb-docker                           # Required. Name of the docker repository on artifactory
   autoPull: true                                   # Defaults to true.
  
