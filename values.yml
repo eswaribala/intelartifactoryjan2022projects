@@ -10,7 +10,7 @@ artifactoryIntegration: productapi                        # Required. Name of th
  
 Image:                                              # Required.
   name: traderappv1                                    # Name of the Image resource. Defaults to ImageRes.
-  sourceRepository: inv-1-veb-docker/                           # Required. Name of the docker repository on artifactory
+  sourceRepository: eswaribala/vusmsjan2022                           # Required. Name of the docker repository on artifactory
   autoPull: true                                   # Defaults to true.
  
 DockerBuild:                                        # Required.
