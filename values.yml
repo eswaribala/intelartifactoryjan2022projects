@@ -9,24 +9,24 @@ GitRepo:                                            # Required.
 artifactoryIntegration: art                         # Required. Name of the artifactory integration using which the docker image will be pushed.
  
 Image:                                              # Required.
-  name: fooImage                                    # Name of the Image resource. Defaults to ImageRes.
-  sourceRepository: foo                             # Required. Name of the docker repository on artifactory
-  autoPull: false                                   # Defaults to true.
+  name: eswaribala/vusmsjan2022:traderappv1                                    # Name of the Image resource. Defaults to ImageRes.
+  sourceRepository: eswaribala/vusmsjan2022                             # Required. Name of the docker repository on artifactory
+  autoPull: true                                   # Defaults to true.
  
 DockerBuild:                                        # Required.
-  name: foobuild                                    # Name of the DockerBuild step. Defaults to DockerBuild.
-  dockerImageName: foo                              # Required. Name of the docker image getting built.
-  dockerFileName: foo                               # Required. Name of the Dockerfile.
+  name: traderbuild                                    # Name of the DockerBuild step. Defaults to DockerBuild.
+  dockerImageName: traderappv2                              # Required. Name of the docker image getting built.
+  dockerFileName: dockerfile                              # Required. Name of the Dockerfile.
   dockerFileLocation: '.'                           # Required. Path to Dockerfile.
   dockerImageTag: ${run_number}                     # Name of the docker image tag. Defaults to latest.
  
 Pipeline:
-  name: foo                                         # Name of the pipeline. Defaults to Pipeline.
+  name: traderpipe                                        # Name of the pipeline. Defaults to Pipeline.
  
 DockerPush:                                         # Required.
-  name: foopush                                     # Name of the DockerPush step. Defaults to DockerPush.
-  targetRepository: foo                             # Required. Name of the artifactory repository where the image will be pushed to.
+  name: traderpush                                     # Name of the DockerPush step. Defaults to DockerPush.
+  targetRepository: eswaribala                          # Required. Name of the artifactory repository where the image will be pushed to.
  
 BuildInfo:                                          # Optional, if the BuildInfo needs to be published.
   autoPublishBuildInfo: true                        # Defaults to true.
-  name: fooBuildInfo                                # Name of the BuildInfo resource. Defaults to BuildInfo.
+  name: traderbuild                             # Name of the BuildInfo resource. Defaults to BuildInfo.
