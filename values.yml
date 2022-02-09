@@ -6,7 +6,7 @@ GitRepo:                                            # Required.
     exclude: 'master'                               # Regex pattern to exclude branches.
     include: ^{{gitBranch}}$                        # Regex pattern to include branches.
  
-artifactoryIntegration: inv-1-veb-docker                         # Required. Name of the artifactory integration using which the docker image will be pushed.
+artifactoryIntegration: productapi                        # Required. Name of the artifactory integration using which the docker image will be pushed.
  
 Image:                                              # Required.
   name: traderappv1                                    # Name of the Image resource. Defaults to ImageRes.
