@@ -1,6 +1,6 @@
 GitRepo:                                            # Required.
   name: fooGitRepo                                  # Name of the GitRepo resource. Defaults to GitRepoRes.
-  gitProvider: github                               # Required. Name of the SCM integration which will be used to fetch the SCM. repository.
+  gitProvider: productapi                              # Required. Name of the SCM integration which will be used to fetch the SCM. repository.
   path: eswaribala/intelartifactoryjan2022projects  # Required. Path to the SCM repository.
   branches:
     exclude: 'master'                               # Regex pattern to exclude branches.
