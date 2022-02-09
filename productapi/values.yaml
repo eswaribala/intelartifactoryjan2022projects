@@ -1,15 +1,18 @@
-resources:
-  - name: my_Git_Repository
-    type: GitRepo
-    configuration:
-      gitProvider: my_GitHub_Integration
-      path: productapi
-      branches:
-        include: master
+steps:
+- name: step_1
+  type: Bash
+  configuration:
+    inputResources:
+      - name: my_Git_Repository     # Trigger execution on code commit
+  execution:
+    onExecute:
+      - echo "Hello World!"
  
-  - name: my_Docker_Image
-    type: Image
-    configuration:
-      registry: my_Docker_Registry_Integration
-      imageName: productapp
-      imageTag: latest
+- name: step_2
+  type: Bash
+  configuration:
+    inputSteps:
+      - name: step_1               # Execute this step after the prior step
+  execution:
+    onExecute:
+      - echo "Goodbye World!"
