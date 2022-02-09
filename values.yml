@@ -6,11 +6,11 @@ GitRepo:                                            # Required.
     exclude: 'master'                               # Regex pattern to exclude branches.
     include: ^{{gitBranch}}$                        # Regex pattern to include branches.
  
-artifactoryIntegration: art                         # Required. Name of the artifactory integration using which the docker image will be pushed.
+artifactoryIntegration: inv-1-veb-docker                         # Required. Name of the artifactory integration using which the docker image will be pushed.
  
 Image:                                              # Required.
   name: traderappv1                                    # Name of the Image resource. Defaults to ImageRes.
-  sourceRepository: inv-1-veb-docker                             # Required. Name of the docker repository on artifactory
+  sourceRepository: inv-1-veb-docker/                           # Required. Name of the docker repository on artifactory
   autoPull: true                                   # Defaults to true.
  
 DockerBuild:                                        # Required.
@@ -25,7 +25,7 @@ Pipeline:
  
 DockerPush:                                         # Required.
   name: traderpush                                     # Name of the DockerPush step. Defaults to DockerPush.
-  targetRepository: eswaribala                          # Required. Name of the artifactory repository where the image will be pushed to.
+  targetRepository: inv-1-veb-docker                          # Required. Name of the artifactory repository where the image will be pushed to.
  
 BuildInfo:                                          # Optional, if the BuildInfo needs to be published.
   autoPublishBuildInfo: true                        # Defaults to true.
